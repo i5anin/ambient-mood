@@ -28,7 +28,7 @@ export function SoundPlayerControls() {
 
             <div className="controls">
                 <Button onClick={togglePlayPause} disabled={!currentSound}>
-                    {isPaused ? '▶️ Воспроизвести' : '⏸️ Пауза'}
+                    {isPaused ? '▶ Воспроизвести' : '⏸ Пауза'}
                 </Button>
             </div>
 
