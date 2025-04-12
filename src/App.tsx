@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import {useState, useRef} from 'react';
 import './App.css';
 
 type SoundName = 'rain' | 'summer' | 'winter';
@@ -70,32 +70,35 @@ function App() {
     };
 
     return (
-        <div className="container">
-            <h1>Выберите шум природы</h1>
-            <div className="buttons">
-                <button onClick={() => handleSelectSound('rain')}>Дождь</button>
-                <button onClick={() => handleSelectSound('summer')}>Лето</button>
-                <button onClick={() => handleSelectSound('winter')}>Зима</button>
-            </div>
+        <>
+            <div id="overlay"/>
+            <div className="container">
+                <h1>Выберите шум природы</h1>
+                <div className="buttons">
+                    <button onClick={() => handleSelectSound('rain')}>Дождь</button>
+                    <button onClick={() => handleSelectSound('summer')}>Лето</button>
+                    <button onClick={() => handleSelectSound('winter')}>Зима</button>
+                </div>
 
-            <div className="controls">
-                <button
-                    onClick={togglePlayPause}
-                    disabled={!currentSound}
-                >
-                    {isPaused ? '▶️ Воспроизвести' : '⏸️ Пауза'}
-                </button>
-            </div>
+                <div className="controls">
+                    <button
+                        onClick={togglePlayPause}
+                        disabled={!currentSound}
+                    >
+                        {isPaused ? '▶️ Воспроизвести' : '⏸️ Пауза'}
+                    </button>
+                </div>
 
-            <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-            />
-        </div>
+                <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value={volume}
+                    onChange={handleVolumeChange}
+                />
+            </div>
+        </>
     );
 }
 

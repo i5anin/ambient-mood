@@ -40,3 +40,42 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Затенённый фон через overlay-элемент */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* прозрачное затемнение */
+  z-index: 0; /* ниже контейнера, но выше фонового изображения */
+  pointer-events: none; /* не блокирует клики */
+}
+
+/* Контейнер поверх затемнения */
+.container {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Кнопки с отступами */
+.buttons button {
+  margin: 0 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Элементы управления */
+.controls {
+  margin: 1.5rem 0;
+}
+
+/* Слайдер громкости */
+input[type="range"] {
+  width: 50%;
+  margin-top: 1rem;
+}
+
